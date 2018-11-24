@@ -33,23 +33,16 @@ public class MonkeyMovement : MonoBehaviour {
         running = true;
     }
 
-    void Update() {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        //checks if mouse is over the sprite
-        bool overSprite = this.GetComponent<SpriteRenderer>().bounds.Contains(mousePosition);
-
-        if (overSprite)
+    void LateUpdate()
+    {
+        if (Input.GetMouseButton(0))
         {
-            if (Input.GetMouseButton(0))
-            {
-                // set the position to the mouse position
-                this.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, positionMonkeyHeight, 0.0f);
-            }
-            if (Input.GetMouseButtonUp(0))
-            {
-                this.transform.position = Vector2.MoveTowards(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(monkidefault.position.x, monkidefault.position.y), 5f);
-            }
+            // set the position to the mouse position
+            this.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, positionMonkeyHeight, 0.0f);
+        }
+        if (Input.GetMouseButtonUp(0)) 
+        {
+            this.transform.position = Vector2.MoveTowards(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(monkidefault.position.x, monkidefault.position.y), 5f);
         }
         running = groundDrop.going;
     }

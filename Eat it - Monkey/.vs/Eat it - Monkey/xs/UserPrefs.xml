@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{800F38D5-7233-A4CB-D8F5-25AC75BA8C95}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameStartMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MonkeyMovement.cs">
     <Files>
       <File FileName="Assets/Scripts/MenuController.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="78" Column="52" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="78" Column="6" />
       <File FileName="Assets/Scripts/BananaDrop.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GroundDrop.cs" Line="29" Column="39" />
       <File FileName="Assets/Scripts/MonkeyMovement.cs" Line="64" Column="33" />
