@@ -1,29 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Background music made by Andrea Baroni (andreabaroni.com)
+// Background music made by Andrea Baroni (andreabaroni.com)
 
 public class GameController : MonoBehaviour {
 
-    public Text scoreBoard;
     public float spawnTime;
     public GameObject banana;
+    public GameObject stone;
     public Transform[] bananaSpawnPoints;
+    public event System.Action<int> OnAddedScore;
 
     private int score = 0;
     private float count = 0f;
     private float countSpeed = 0f;
     private float countTo = 1.0f;
     private float speedUp = 10.0f;
+    private float time;
+    private float minTime = 1.0f;
+    private float maxTime = 5.0f;
     private MenuController menuController;
     private IEnumerator coroutine;
-    private bool gameOver = false;
+    private bool gameOver;
 
     private void Awake()
     {
-        //Invoke("BananaSpawn", 1.0f);
         GameObject menuControllerObject = GameObject.FindWithTag("MenuController");
         if (menuControllerObject != null)
         {
@@ -35,10 +38,29 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    private void Start()
+    {
+        time = 0f;
+        SetRandomTime();
+    }
+
     private void Update()
     {
         if(!gameOver){
             Counter();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if(!gameOver) {
+            time += Time.deltaTime;
+            if (time >= spawnTime)
+            {
+                StoneSpawn();
+                SetRandomTime();
+                time = 0f;
+            }
         }
     }
 
@@ -58,20 +80,32 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    // Sets the random time between minTime and maxTime
+    void SetRandomTime() {
+        spawnTime = Random.Range(minTime, maxTime);
+    }
+
 
     void BananaSpawn()
     {
         int spawnPointIndex = Random.Range(0, bananaSpawnPoints.Length);
-        if (GameObject.FindGameObjectsWithTag("Spawn").Length < 20)
+        if (GameObject.FindGameObjectsWithTag("Spawn").Length < 15)
         {
             Instantiate(banana, bananaSpawnPoints[spawnPointIndex].position, bananaSpawnPoints[spawnPointIndex].rotation);
         }
     }
 
-    public void AddScore(int newScore)
+    void StoneSpawn() {
+        int spawnPointIndex = Random.Range(0, bananaSpawnPoints.Length);
+        if(GameObject.FindGameObjectsWithTag("Stone").Length < 4) {
+            Instantiate(stone, bananaSpawnPoints[spawnPointIndex].position, bananaSpawnPoints[spawnPointIndex].rotation);
+        }
+    }
+
+    public void AddScore()
     {
-        score = newScore;
-        UpdateScore();
+        score++;
+        OnAddedScore(score);
     }
 
     public void GameOver()
@@ -81,10 +115,5 @@ public class GameController : MonoBehaviour {
             PlayerPrefs.SetInt("Highscore", score);
         }
         menuController.GameOver(PlayerPrefs.GetInt("Highscore", 0));
-    }
-
-    void UpdateScore()
-    {
-        scoreBoard.text = score.ToString();
     }
 }

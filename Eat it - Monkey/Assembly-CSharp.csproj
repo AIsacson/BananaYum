@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\GroundDrop.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\MonkeyMovement.cs" />
+    <Compile Include="Assets\Scripts\ScoreBoard.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/Shared/Unity/BananaYum/Eat it - Monkey/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -9,12 +9,13 @@ public class MonkeyMovement : MonoBehaviour {
     public Transform monkidefault;
     public bool running;
     public GroundDrop groundDrop;
-    public float positionMonkeyHeight = -3.8f;
+    public float positionMonkeyHeight = -2.8f;
 
 
     private GameController gameController;
     private Animator anim;
     private AudioSource eatSound;
+    private bool stonefree = true;
 
     void Start() {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -44,20 +45,25 @@ public class MonkeyMovement : MonoBehaviour {
         {
             this.transform.position = Vector2.MoveTowards(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(monkidefault.position.x, monkidefault.position.y), 5f);
         }
-        running = groundDrop.going;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        running = groundDrop.going;
         if (other.tag == "Banana")
         {
-            if (running)
+            if (running && stonefree)
             {
                 anim.SetTrigger("Eat");
                 eatSound.Play();
-                gameController.AddScore(++score);
+                gameController.AddScore();
                 Destroy(other.gameObject);
             }
+        }
+        if(other.tag == "Stone") {
+            stonefree = false;
+            gameController.GameOver();
+            Destroy(other.gameObject);
         }
     }
 }

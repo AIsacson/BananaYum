@@ -28,5 +28,9 @@ public class GroundDrop : MonoBehaviour {
             going = false;
             Destroy(other.gameObject);
         }
+
+        if(other.tag == "Stone") {
+            Destroy(other.gameObject);
+        }
     }
 }
