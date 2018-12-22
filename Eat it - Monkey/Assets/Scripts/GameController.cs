@@ -11,11 +11,12 @@ public class GameController : MonoBehaviour {
     public GameObject banana;
     public GameObject stone;
     public Transform[] bananaSpawnPoints;
+    public Transform[] obstacleSpawnPoints;
     public event System.Action<int> OnAddedScore;
 
-    private int score = 0;
-    private float count = 0f;
-    private float countSpeed = 0f;
+    private int score;
+    private float count;
+    private float countSpeed;
     private float countTo = 1.0f;
     private float speedUp = 10.0f;
     private float time;
@@ -96,9 +97,9 @@ public class GameController : MonoBehaviour {
     }
 
     void StoneSpawn() {
-        int spawnPointIndex = Random.Range(0, bananaSpawnPoints.Length);
+        int spawnPointIndex = Random.Range(0, obstacleSpawnPoints.Length);
         if(GameObject.FindGameObjectsWithTag("Stone").Length < 4) {
-            Instantiate(stone, bananaSpawnPoints[spawnPointIndex].position, bananaSpawnPoints[spawnPointIndex].rotation);
+            Instantiate(stone, obstacleSpawnPoints[spawnPointIndex].position, obstacleSpawnPoints[spawnPointIndex].rotation);
         }
     }
 

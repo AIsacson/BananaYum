@@ -12,6 +12,6 @@ public class BananaDrop : MonoBehaviour {
     }
 
     private void Update() {
-        rb.velocity = new Vector2(.0f, speed);
+        rb.velocity = new Vector2(0f, speed);
     }
 }

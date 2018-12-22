@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonkeyMovement : MonoBehaviour {
 
@@ -10,7 +11,6 @@ public class MonkeyMovement : MonoBehaviour {
     public bool running;
     public GroundDrop groundDrop;
     public float positionMonkeyHeight = -2.8f;
-
 
     private GameController gameController;
     private Animator anim;
