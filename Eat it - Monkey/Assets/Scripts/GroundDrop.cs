@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GroundDrop : MonoBehaviour {
 
+    public bool bananaDropped = true;
+
     private GameController gameController;
-    public bool going = true;
 
     void Start()
     {
@@ -25,8 +26,7 @@ public class GroundDrop : MonoBehaviour {
         if (other.tag == "Banana")
         {
             gameController.GameOver();
-            going = false;
-            Destroy(other.gameObject);
+            bananaDropped = false;
         }
 
         if(other.tag == "Stone") {

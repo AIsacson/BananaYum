@@ -68,17 +68,27 @@
     <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\MonkeyMovement.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard.cs" />
+    <Compile Include="Assets\Scripts\StickDrop.cs" />
+    <Reference Include="Unity.VectorGraphics">
+      <HintPath>/Users/Shared/Unity/BananaYum/Eat it - Monkey/Library/ScriptAssemblies/Unity.VectorGraphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.003">
+      <HintPath>/Users/Shared/Unity/BananaYum/Eat it - Monkey/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.003.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/Shared/Unity/BananaYum/Eat it - Monkey/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>/Users/Shared/Unity/BananaYum/Eat it - Monkey/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/Shared/Unity/BananaYum/Eat it - Monkey/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>/Users/Shared/Unity/BananaYum/Eat it - Monkey/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VectorGraphics.Editor">
+      <HintPath>/Users/Shared/Unity/BananaYum/Eat it - Monkey/Library/ScriptAssemblies/Unity.VectorGraphics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>/Users/Shared/Unity/BananaYum/Eat it - Monkey/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>/Users/Shared/Unity/BananaYum/Eat it - Monkey/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>

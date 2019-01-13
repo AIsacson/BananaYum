@@ -3,7 +3,15 @@ guid: 378ae633e153c4e1d871e0b12d89468e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - isAudioOn: {instanceID: 0}
+  - isMusicOn: {instanceID: 0}
+  - eatSound: {fileID: 82499463141348918, guid: ee5c9ef24289846b5ae621f8537b0ee8,
+      type: 3}
+  - gameMusic: {fileID: 82426548069055644, guid: 2d7e956f39b1246ee974b64e060dd505,
+      type: 3}
+  - bananaSplat: {fileID: 3016417671499356029, guid: 82d0ecd94783c4c9eb26de352248398e,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

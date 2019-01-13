@@ -8,9 +8,10 @@ public class MonkeyMovement : MonoBehaviour {
     public Vector2 start;
     public int score;
     public Transform monkidefault;
-    public bool running;
+    public bool alive;
     public GroundDrop groundDrop;
     public float positionMonkeyHeight = -2.8f;
+    public AudioClip monkeySlap;
 
     private GameController gameController;
     private Animator anim;
@@ -31,7 +32,7 @@ public class MonkeyMovement : MonoBehaviour {
         anim = GetComponent<Animator>();
         eatSound = GetComponent<AudioSource>();
 
-        running = true;
+        alive = true;
     }
 
     void LateUpdate()
@@ -49,10 +50,10 @@ public class MonkeyMovement : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        running = groundDrop.going;
+        alive = groundDrop.bananaDropped;
         if (other.tag == "Banana")
         {
-            if (running && stonefree)
+            if (alive && stonefree)
             {
                 anim.SetTrigger("Eat");
                 eatSound.Play();
@@ -60,8 +61,10 @@ public class MonkeyMovement : MonoBehaviour {
                 Destroy(other.gameObject);
             }
         }
-        if(other.tag == "Stone") {
+        if(other.tag == "Stone" && alive) {
             stonefree = false;
+            eatSound.PlayOneShot(monkeySlap, 1f);
+            anim.SetBool("hurt", true);
             gameController.GameOver();
             Destroy(other.gameObject);
         }

@@ -20,15 +20,17 @@ public class GameStartMenu : MonoBehaviour {
     public Toggle isMusicOn;
     public AudioSource eatSound;
     public AudioSource gameMusic;
+    public AudioSource bananaSplat;
+    public Canvas settingsLeaf;
 
     #region Mono API
 
-    void Start()
-    {
-        int stateAudio = GetPref(AUDIO, (int)State.ON);
-        int stateMusic = GetPref(MUSIC, (int)State.ON);
+    private void Awake() {
+        int stateAudio = GetPref(AUDIO, (int)State.OFF);
+        int stateMusic = GetPref(MUSIC, (int)State.OFF);
         isAudioOn.isOn = Convert.ToBoolean(stateAudio);
         isMusicOn.isOn = Convert.ToBoolean(stateMusic);
+        settingsLeaf.gameObject.SetActive(false);
     }
 
     void Update() {
@@ -52,6 +54,14 @@ public class GameStartMenu : MonoBehaviour {
         SceneManager.LoadScene("Game scene");
     }
 
+    public void SettingsOpen() {
+        settingsLeaf.gameObject.SetActive(true);
+    }
+
+    public void SettingsClose() {
+        settingsLeaf.gameObject.SetActive(false);
+    }
+
     public void OnToggleAudio(State state) {
         SetAudio(state);
     }
@@ -61,13 +71,24 @@ public class GameStartMenu : MonoBehaviour {
     }
 
     private void SetAudio(State state) {
-        SetPref(AUDIO, (int)state);
-        eatSound.volume = GetPref(AUDIO, (int)state);
+        SetPref(AUDIO, (int)state); 
+        if (GetPref(AUDIO, (int)state) == 1) {
+            eatSound.volume = 0f;
+            bananaSplat.volume = 0f;
+        } else if(GetPref(AUDIO, (int)state) == 0) {
+            eatSound.volume = 0.1f;
+            bananaSplat.volume = 0.2f;
+        }
     }
 
     private void SetMusic(State state) {
         SetPref(MUSIC, (int)state);
-        gameMusic.volume = GetPref(MUSIC, (int)state);
+        if (GetPref(MUSIC, (int)state) == 1) {
+            gameMusic.volume = 0f;
+        }
+        else if(GetPref(MUSIC, (int)state) == 0){
+            gameMusic.volume = 0.8f;
+        }
     }
 
     #endregion
