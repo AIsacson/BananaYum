@@ -5,7 +5,7 @@ using UnityEngine;
 public class GroundDrop : MonoBehaviour {
 
     public bool bananaDropped = true;
-
+    public Animator anim;
     private GameController gameController;
 
     void Start()
@@ -27,6 +27,7 @@ public class GroundDrop : MonoBehaviour {
         {
             gameController.GameOver();
             bananaDropped = false;
+            anim.SetBool("sad", true);
         }
 
         if(other.tag == "Stone") {

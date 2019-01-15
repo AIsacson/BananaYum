@@ -56,6 +56,7 @@ public class GameStartMenu : MonoBehaviour {
 
     public void SettingsOpen() {
         settingsLeaf.gameObject.SetActive(true);
+        settingsLeaf.gameObject.SetActive(true);
     }
 
     public void SettingsClose() {
