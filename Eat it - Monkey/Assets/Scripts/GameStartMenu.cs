@@ -31,6 +31,7 @@ public class GameStartMenu : MonoBehaviour {
         isAudioOn.isOn = Convert.ToBoolean(stateAudio);
         isMusicOn.isOn = Convert.ToBoolean(stateMusic);
         settingsLeaf.gameObject.SetActive(false);
+        gameMusic.Play();
     }
 
     void Update() {
@@ -52,6 +53,7 @@ public class GameStartMenu : MonoBehaviour {
 
     public void StartGame() {
         SceneManager.LoadScene("Game scene");
+
     }
 
     public void SettingsOpen() {
@@ -68,6 +70,7 @@ public class GameStartMenu : MonoBehaviour {
     }
 
     public void OnToggleMusic(State state) {
+       
         SetMusic(state);
     }
 

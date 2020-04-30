@@ -1,6 +1,6 @@
 iOS
 PlayerPath?
-/Users/annaisacson/Desktop/UnityCourse/BananaYumBuild_4
+/Users/annaisacson/Desktop/BananaYum-build
 SceneListBegin?
 Assets/Scenes/StartScene.unity
 Assets/Scenes/Game scene.unity
@@ -194,7 +194,7 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 3769756fe980c0b9ee6c57f6f3afe6b0 Assembly-CSharp.dll:.MonkeyMovement
-5e9a2f31e4129994dacddb117225e357 Assembly-CSharp.dll:.GroundDrop
+e8670834ab547022b3cffbbd31aead25 Assembly-CSharp.dll:.GroundDrop
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
