@@ -1,6 +1,6 @@
 iOS
 PlayerPath?
-/Users/annaisacson/Desktop/BananaYum-build
+/Users/annaisacson/Desktop/Random/BananaYum-build
 SceneListBegin?
 Assets/Scenes/StartScene.unity
 Assets/Scenes/Game scene.unity

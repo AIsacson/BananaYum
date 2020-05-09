@@ -20,7 +20,7 @@ public class MenuController : MonoBehaviour {
     public void GameOver(int highscore)
     {
         panel.gameObject.SetActive(true);
-        gameOverText.text = "Best: " + highscore;
+        gameOverText.text = "HIGH SCORE: " + highscore;
 
     }
 

@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{800F38D5-7233-A4CB-D8F5-25AC75BA8C95}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BananaDrop.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController.cs">
     <Files>
-      <File FileName="Assets/Scripts/MenuController.cs" Line="22" Column="42" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="79" Column="33" />
-      <File FileName="Assets/Scripts/MonkeyMovement.cs" Line="58" Column="29" />
+      <File FileName="Assets/Scripts/MenuController.cs" Line="23" Column="42" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="39" Column="10" />
+      <File FileName="Assets/Scripts/MonkeyMovement.cs" Line="59" Column="30" />
       <File FileName="Assets/Scripts/ScoreBoard.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BananaDrop.cs" Line="37" Column="17" />
       <File FileName="Assets/Scripts/GroundDrop.cs" Line="30" Column="39" />
-      <File FileName="Assets/Scripts/GameStartMenu.cs" Line="80" Column="1" />
+      <File FileName="Assets/Scripts/GameStartMenu.cs" Line="34" Column="26" />
       <File FileName="Assets/Scripts/StickDrop.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
